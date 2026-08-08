@@ -5,7 +5,7 @@
 
 一条命令，桌面角色立刻播放闹钟特效。无需等待时钟。
 
-[▶️ 观看演示视频](https://github.com/Tukist/desktopmate-alarm-trigger/releases/download/v1.0/Recording.2026-08-08.223949.mp4)
+![演示](demo.gif)
 
 ## 原理
 
