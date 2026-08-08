@@ -1,10 +1,11 @@
 # Desktop Mate 闹钟即时触发器
 
-> ⚠️ **需要先安装 Desktop Mate (Steam App 3301060)**。本工具是其 mod，不是独立闹钟。
+> ⚠️ **需要先安装 Desktop Mate (Steam App 3301060)**。本工具是其 mod，不是独立闹钟。  
+> **项目目的**：将 Desktop Mate 的闹钟特效触发逻辑分离为独立组件，使得无需等待系统时钟匹配、无需操作游戏 UI，一行命令即可触发角色播放闹钟动画和音效。可用于桌面提醒、自动化工作流等场景。
 
 一条命令，桌面角色立刻播放闹钟特效。无需等待时钟。
 
-[▶️ 观看演示视频](https://github.com/Tukist/dm-alarm-trigger/releases/download/v1.0/Recording.2026-08-08.223949.mp4)
+[▶️ 观看演示视频](https://github.com/Tukist/desktopmate-alarm-trigger/releases/download/v1.0/Recording.2026-08-08.223949.mp4)
 
 ## 原理
 
