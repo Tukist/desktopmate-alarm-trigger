@@ -6,20 +6,33 @@ from datetime import datetime
 
 GAME=None
 # Auto-detect Desktop Mate game path
+import glob as _glob
 candidates=[
-    r"C:\Program Files (x86)\Steam\steamapps\common\Desktop Mate",
-    r"C:\Users\HP\Desktop\mike\Desktop.Mate-P2P",
     os.path.join(os.path.dirname(os.path.abspath(__file__)),"Desktop.Mate-P2P"),
+    os.path.join(os.path.dirname(os.path.abspath(__file__)),"DesktopMate"),
+    r"C:\Users\HP\Desktop\mike\Desktop.Mate-P2P",
 ]
+# Steam library
+for lib in [r"C:\Program Files (x86)\Steam\steamapps\common",
+            r"D:\Steam\steamapps\common",
+            r"E:\Steam\steamapps\common"]:
+    if os.path.isdir(lib):
+        candidates.append(os.path.join(lib,"Desktop Mate"))
+        for d in _glob.glob(lib+"/*"):
+            if 'desktop' in d.lower() and 'mate' in d.lower():
+                candidates.append(d)
+# Check current directory
+for d in _glob.glob("*Desktop*Mate*"):
+    candidates.append(os.path.abspath(d))
+
 for c in candidates:
     if os.path.exists(os.path.join(c,"DesktopMate.exe")):
         GAME=c;break
+if not GAME and len(sys.argv)>1:
+    GAME=sys.argv[1]
 if not GAME:
-    # Check command line arg
-    if len(sys.argv)>1:GAME=sys.argv[1]
-if not GAME:
-    print("[!] Desktop Mate 未找到。用法: dm_fire.exe <游戏路径>")
-    print("[!] 示例: dm_fire.exe \"D:\\Games\\Desktop Mate\"")
+    import tkinter.messagebox as _mb
+    _mb.showerror("错误","未找到 Desktop Mate 游戏。\n\n请将本程序放到游戏目录下运行，\n或使用命令行指定路径：\n  dm_fire.exe \"游戏路径\"")
     sys.exit(1)
 EXE=os.path.join(GAME,"DesktopMate.exe")
 REG=r"Software\infiniteloop\DesktopMate"
