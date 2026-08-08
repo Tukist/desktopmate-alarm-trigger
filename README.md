@@ -60,11 +60,20 @@ Desktop Mate 的闹钟检测在 `AlarmManager.Update()` 中每帧运行（RVA `0
 
 ## 使用
 
+**方式一：下载 Release 中的 `dm_fire.exe`，双击运行。** 无需安装任何依赖。
+
+> 首次运行 Windows 可能弹出 SmartScreen 警告，点击"更多信息" → "仍要运行"即可。
+
+**方式二：Python 脚本**
+
 ```cmd
-D:\anaconda3\pythonw.exe dm_fire.py
+pythonw dm_fire.py
 ```
 
-或双击 `dm_fire.vbs`
+> 如果游戏不在自动检测的路径下，可以指定：
+> ```cmd
+> pythonw dm_fire.py "D:\Games\Desktop Mate"
+> ```
 
 ## 编译
 
