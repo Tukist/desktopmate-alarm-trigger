@@ -4,7 +4,7 @@
 
 一条命令，桌面角色立刻播放闹钟特效。无需等待时钟。
 
-[▶️ 效果演示](https://github.com/Tukist/dm-alarm-trigger/releases/download/v1.0/Recording%202026-08-08%20223949.mp4)
+[▶️ 效果演示](https://github.com/Tukist/dm-alarm-trigger/releases/download/v1.0/Recording.2026-08-08.223949.mp4)
 
 ## 原理
 
