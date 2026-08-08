@@ -6,6 +6,8 @@
 
 <video src="https://github.com/Tukist/dm-alarm-trigger/releases/download/v1.0/Recording.2026-08-08.223949.mp4" controls width="100%"></video>
 
+> 如果视频无法播放，[点此下载观看](https://github.com/Tukist/dm-alarm-trigger/releases/download/v1.0/Recording.2026-08-08.223949.mp4)
+
 ## 原理
 
 ```
