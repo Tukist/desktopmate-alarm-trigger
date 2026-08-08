@@ -4,7 +4,23 @@ import sys,os,ctypes,subprocess,time,json,winreg,shutil
 ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(),0)
 from datetime import datetime
 
-GAME=r"C:\Users\HP\Desktop\mike\Desktop.Mate-P2P"
+GAME=None
+# Auto-detect Desktop Mate game path
+candidates=[
+    r"C:\Program Files (x86)\Steam\steamapps\common\Desktop Mate",
+    r"C:\Users\HP\Desktop\mike\Desktop.Mate-P2P",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)),"Desktop.Mate-P2P"),
+]
+for c in candidates:
+    if os.path.exists(os.path.join(c,"DesktopMate.exe")):
+        GAME=c;break
+if not GAME:
+    # Check command line arg
+    if len(sys.argv)>1:GAME=sys.argv[1]
+if not GAME:
+    print("[!] Desktop Mate 未找到。用法: dm_fire.exe <游戏路径>")
+    print("[!] 示例: dm_fire.exe \"D:\\Games\\Desktop Mate\"")
+    sys.exit(1)
 EXE=os.path.join(GAME,"DesktopMate.exe")
 REG=r"Software\infiniteloop\DesktopMate"
 REGV="SaveData_h967477940"
